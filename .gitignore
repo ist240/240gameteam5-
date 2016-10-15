@@ -33,4 +33,36 @@ public class myJFrame extends JFrame
 	}
 
    
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+
+public class StartPanel extends JPanel implements ActionListener {
+    
+    JButton home;
+    JLabel begin;
+   
+    public StartPanel()
+    {
+        super();
+        setBackground(Color.blue);
+        
+        begin= new JLabel ("HELLO!", JLabel.CENTER);
+        begin.setFont(new Font("Serif", Font.BOLD, 48));
+        begin.setForeground(Color.white);
+        add(begin);
+        home= new JButton ("return home");
+        home.addActionListener(this);
+        add(home);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+       Object return = ae.getSource();
+       if (return == home)
+       {
+           
+       }
+    }
 }
