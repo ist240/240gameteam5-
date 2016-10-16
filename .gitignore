@@ -178,3 +178,33 @@ public class Instructions extends JPanel implements ActionListener
         }
     }
 }
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Credits extends JPanel implements ActionListener {
+    
+    JButton home;
+    
+    public Credits ()
+    {
+        super();
+        setBackground(Color.white);
+        
+        add(new JLabel ("Game created by Alexandra Desir, Amber Harris, Shadia Maurtua, Soren Diehl") );
+        home = new JButton ("Return Home");
+       
+        add(home);
+        
+    }
+     @Override
+    public void actionPerformed(ActionEvent event) 
+    {
+        Object obj = event.getSource();
+        {
+         if (obj == home)
+           removeAll();
+        }
+    }
+} 
