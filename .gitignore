@@ -66,3 +66,37 @@ public class StartPanel extends JPanel implements ActionListener {
        }
     }
 }
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Instructions extends JPanel implements ActionListener
+{
+    JButton home;
+    JButton start;
+        
+    public Instructions ()
+    {
+        super();
+        setBackground(Color.white);
+        
+        add(new JLabel ("Please Read Instructions\n") );
+        add(new JLabel ("Instructions Here: \n ") );
+        home = new JButton ("Home");
+        start = new JButton ("Start");
+        
+        add (start);
+        add(home);
+        
+    }
+     @Override
+    public void actionPerformed(ActionEvent event) 
+    {
+        Object obj = event.getSource();
+        {
+         if (obj == home)
+           removeAll();
+        }
+    }
+}
