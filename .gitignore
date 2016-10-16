@@ -186,13 +186,14 @@ import javax.swing.*;
 public class Credits extends JPanel implements ActionListener {
     
     JButton home;
+    JLabel team5;
     
     public Credits ()
     {
         super();
         setBackground(Color.white);
         
-        add(new JLabel ("Game created by Alexandra Desir, Amber Harris, Shadia Maurtua, Soren Diehl") );
+        team5 = new JLabel ("Game created by Alexandra Desir, Amber Harris, Shadia Maurtua, Soren Diehl");
         home = new JButton ("Return Home");
        
         add(home);
