@@ -5,6 +5,28 @@ public class  app
     myJFrame mjf = new myJFrame();
   }
 }
+import java.awt.*;
+import javax.swing.*;
+
+
+public class myJFrame extends JFrame
+{
+	PrimaryPanel mjp;
+	public myJFrame ()
+	{
+		super ("Team 5 Game");
+
+
+    	mjp = new PrimaryPanel();
+
+		getContentPane().add(mjp);
+
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize (860, 640);
+		setVisible(true);
+	}
+}
+
 
 import java.awt.*;
 import javax.swing.*;
