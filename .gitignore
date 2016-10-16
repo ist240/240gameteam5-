@@ -62,7 +62,7 @@ public class StartPanel extends JPanel implements ActionListener {
        Object return = ae.getSource();
        if (return == home)
        {
-           
+           removeAll();
        }
     }
 }
