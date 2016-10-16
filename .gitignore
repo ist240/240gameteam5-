@@ -194,6 +194,7 @@ public class Credits extends JPanel implements ActionListener {
         setBackground(Color.white);
         
         team5 = new JLabel ("Game created by Alexandra Desir, Amber Harris, Shadia Maurtua, Soren Diehl");
+	team5.setFont(new Font("Serif", Font.BOLD, 12));
         home = new JButton ("Return Home");
        
         add(home);
