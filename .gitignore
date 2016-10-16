@@ -31,6 +31,84 @@ public class myJFrame extends JFrame
             setSize (800, 250);
             setVisible(true);
 	}
+	import java.awt.*;
+import javax.swing.*;
+import javax.swing.BorderFactory.*;
+import javax.swing.border.*;
+
+public class PrimaryPanel extends JPanel {
+   
+    public PrimaryPanel(){
+    
+    super();
+    setBackground(Color.white);
+    setLayout(new GridBagLayout());
+    Border bevel = BorderFactory.createBevelBorder(BevelBorder.RAISED, Color.black, Color.lightGray);
+    Border etch = BorderFactory.createEtchedBorder(Color.black, Color.black);
+    Insets m = new Insets(100,100,100,100);
+    TitledBorder title = BorderFactory.createTitledBorder(etch, "Click to Start:");
+    title.setTitleColor(Color.white);
+    
+    JButton gn = new JButton("PSU IST Student Sim");
+    gn.setBorder(title);
+    gn.setFont(new Font("Serif", Font.BOLD, 50));
+    GridBagConstraints gnConst = new GridBagConstraints();
+    gnConst.insets.set(10,10,10,10);
+    gnConst.gridy = 0;
+    gnConst.gridx = 2;
+    gnConst.fill = GridBagConstraints.HORIZONTAL;
+    gnConst.weightx = 1.0;
+    gnConst.ipady = 40;
+    gn.setBackground(Color.blue);
+    gn.setForeground(Color.white);
+    add(gn, gnConst);
+    
+    JTextField playerName = new JTextField("Enter Your Name", 30);
+    playerName.setBorder(bevel);
+    GridBagConstraints pnConst = new GridBagConstraints();
+    pnConst.insets.set(10,10,10,10);
+    pnConst.gridy = 1;
+    pnConst.gridx = 2;
+    pnConst.weightx = 1.0;
+    add(playerName, pnConst);
+    
+    JButton instr = new JButton("   Instructions   ");
+    instr.setMargin(m);
+    instr.setBorder(bevel);
+    GridBagConstraints instrConst = new GridBagConstraints();
+    instrConst.insets.set(10,10,10,10);
+    instrConst.gridy = 5;
+    instrConst.gridx = 2;
+    instrConst.weightx = 1.0;
+    instrConst.gridwidth = 3;
+    instr.setBackground(Color.blue);
+    instr.setForeground(Color.white);
+    add(instr, instrConst);
+    
+    JButton cred = new JButton("    Credits    ");
+    cred.setBorder(bevel);
+    GridBagConstraints credConst = new GridBagConstraints();
+    credConst.insets.set(10,10,10,10);
+    credConst.gridy = 9;
+    credConst.gridx = 2;
+    add(cred, credConst);
+    cred.setBackground(Color.blue);
+    cred.setForeground(Color.white);
+          
+    JButton Hs = new JButton("   High Score  ");
+    Hs.setBorder(bevel);
+    GridBagConstraints hsConst = new GridBagConstraints();
+    hsConst.insets.set(10,10,10,10);
+    hsConst.gridy = 7;
+    hsConst.gridx = 2;
+    hsConst.weightx = .5;
+    hsConst.gridwidth = 2;
+    add(Hs, hsConst);
+    Hs.setBackground(Color.blue);
+    Hs.setForeground(Color.white);
+    
+}
+}
 
    
 import java.awt.*;
