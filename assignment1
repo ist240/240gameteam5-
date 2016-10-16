@@ -192,10 +192,7 @@ public class CreditPanel extends JPanel implements ActionListener {
         
         team5 = new JLabel ("Game created by Alexandra Desir, Amber Harris, Shadia Maurtua, Soren Diehl");
 	team5.setFont(new Font("Serif", Font.BOLD, 12));
-	ImageIcon icon = new ImageIcon("images/team5dribble.jpg");
-        JLabel teamicon = new JLabel();
-        teamicon.setIcon(icon);
-        home = new JButton ("Return Home");
+	home = new JButton ("Return Home");
         home.addActionListener(this);
        
         add(home);
