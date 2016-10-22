@@ -1,0 +1,325 @@
+public class  app
+{
+  public static void main(String args[])
+  {
+    myJFrame mjf = new myJFrame();
+  }
+}
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.BoxLayout;
+public class myJFrame extends JFrame
+{
+	public myJFrame ()
+	{
+           
+            JFrame frame = new JFrame("Team 5 Game");
+                PrimaryPanel mjp = new PrimaryPanel();
+		getContentPane().add(mjp,"Center");
+                setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize (640, 480);
+		setVisible(true);
+
+   
+}
+}
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.BorderFactory.*;
+import javax.swing.border.*;
+import java.awt.event.*;
+
+
+public class PrimaryPanel extends JPanel implements ActionListener{
+   
+    JButton gn;
+    JButton instr;
+    JButton cred;
+    JButton Hs;
+    JTextField playerName;
+   
+    MatteBorder matt = new MatteBorder(10, 10, 10, 10, Color.red);
+    TitledBorder tm = new TitledBorder("Enter a player name to continue");
+    
+    public PrimaryPanel(){
+    
+    super();
+    setBackground(Color.white);
+    setLayout(new GridBagLayout());
+    Border bevel = BorderFactory.createBevelBorder(BevelBorder.RAISED, Color.black, Color.lightGray);
+    Border etch = BorderFactory.createEtchedBorder(Color.black, Color.black);
+    Insets m = new Insets(100,100,100,100);
+    TitledBorder title = BorderFactory.createTitledBorder(etch, "Click to Start:");
+    title.setTitleColor(Color.white);
+        
+    gn = new JButton("PSU IST Student Sim");
+    gn.setBorder(title);
+    gn.setFont(new Font("Serif", Font.BOLD, 50));
+    GridBagConstraints gnConst = new GridBagConstraints();
+    gnConst.insets.set(10,10,10,10);
+    gnConst.gridy = 0;
+    gnConst.gridx = 1;
+    gnConst.fill = GridBagConstraints.HORIZONTAL;
+    //gnConst.weightx = 1.0;
+    //gnConst.ipady = 40;
+    gn.setBackground(Color.blue);
+    gn.setForeground(Color.white);
+    gn.addActionListener(this);
+    add(gn, gnConst);
+    
+    
+    JTextField playerName = new JTextField("Enter Your Name", 30);
+    playerName.setBorder(bevel);
+    GridBagConstraints pnConst = new GridBagConstraints();
+    pnConst.insets.set(10,10,10,10);
+    pnConst.gridy = 1;
+    pnConst.gridx = 1;
+    pnConst.weightx = 1.0;
+    playerName.addActionListener(this);
+    add(playerName, pnConst);
+    
+    instr = new JButton("   Instructions   ");
+    instr.setMargin(m);
+    instr.setBorder(bevel);
+    GridBagConstraints instrConst = new GridBagConstraints();
+    instrConst.insets.set(10,10,10,10);
+    instrConst.gridy = 5;
+    instrConst.gridx = 1;
+    instrConst.weightx = 1.0;
+    instrConst.gridwidth = 3;
+    instr.setBackground(Color.blue);
+    instr.setForeground(Color.white);
+    instr.addActionListener(this);
+    add(instr, instrConst);
+    
+    cred = new JButton("    Credits    ");
+    cred.setBorder(bevel);
+    GridBagConstraints credConst = new GridBagConstraints();
+    credConst.insets.set(10,10,10,10);
+    credConst.gridy = 9;
+    credConst.gridx = 1;
+    cred.addActionListener(this);
+    add(cred, credConst);
+    cred.setBackground(Color.blue);
+    cred.setForeground(Color.white);
+          
+    Hs = new JButton("   High Score  ");
+    Hs.setBorder(bevel);
+    GridBagConstraints hsConst = new GridBagConstraints();
+    hsConst.insets.set(10,10,10,10);
+    hsConst.gridy = 7;
+    hsConst.gridx = 1;
+    hsConst.weightx = .5;
+    Hs.addActionListener(this);
+    add(Hs, hsConst);
+    Hs.setBackground(Color.blue);
+    Hs.setForeground(Color.white);
+    
+    JButton easy = new JButton("Difficulty Settings Will Go Here");
+    easy.setBorder(etch);
+    easy.setFont(new Font("Serif", Font.BOLD, 30));
+    GridBagConstraints easyConst = new GridBagConstraints();
+    easyConst.gridy = 11;
+    easyConst.gridx = 1;
+    easy.addActionListener(this);
+    add(easy, easyConst);
+    easy.setBackground(Color.blue);
+    easy.setForeground(Color.white);
+    
+    JButton med = new JButton("Avatar Gender Choice Will Go Here");
+    med.setBorder(etch);
+    med.setFont(new Font("Serif", Font.BOLD, 30));
+    GridBagConstraints medConst = new GridBagConstraints();
+    
+    medConst.gridy = 13;
+    medConst.gridx = 1;
+    medConst.weightx=1;
+    add(med, medConst);
+    med.setBackground(Color.blue);
+    med.setForeground(Color.white);
+}
+    @Override
+    public void actionPerformed(ActionEvent e){
+        Object obj = e.getSource();
+        if(obj == gn){
+            //Change so that player must enter name to continue in future
+            /*if(playerName.getText().equals("Enter Your Name")){
+                playerName.setBorder(tm);
+                this.repaint();
+                this.revalidate();                
+            }else{
+*/
+            StartPanel sp = new StartPanel();
+            this.removeAll();
+            add(sp);
+            revalidate();
+            repaint();
+            }
+        if (obj == instr){
+            InstructionPanel ip = new InstructionPanel();
+            this.removeAll();
+            add(ip);
+            revalidate();
+            repaint();
+        }
+        if (obj == cred){
+            CreditPanel cp = new CreditPanel();
+            this.removeAll();
+            add(cp);
+            revalidate();
+            repaint();
+        }
+        }
+   import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+    public class InstructionPanel extends JPanel implements ActionListener{
+
+    JButton home;
+    JButton start;
+        
+    public InstructionPanel()
+    {
+        super();
+        setBackground(Color.white);
+        
+        add(new JLabel ("Instructions to be placed here: ") );
+        home = new JButton ("Home");
+        start = new JButton ("Start");
+        home.addActionListener(this);
+        start.addActionListener(this);
+        add (start);
+        add(home);
+        
+    }
+     @Override
+    public void actionPerformed(ActionEvent event) 
+    {
+        Object obj = event.getSource();
+        {
+         if (obj == home){
+           removeAll();
+           PrimaryPanel pp = new PrimaryPanel();
+           add(pp);
+           repaint();
+           revalidate();
+
+        }
+         if (obj == start){
+           removeAll();
+           StartPanel sp = new StartPanel();
+           add(sp);
+           repaint();
+           revalidate();
+
+        }
+    }
+}
+    }
+      import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+
+
+public class CreditPanel extends JPanel implements ActionListener {
+    
+    JButton home;
+    JLabel team5;
+    
+    public CreditPanel ()
+    {
+        super();
+        setBackground(Color.white);
+        
+        team5 = new JLabel ("Game created by Alexandra Desir, Amber Harris, Shadia Maurtua, Soren Diehl");
+	team5.setFont(new Font("Serif", Font.BOLD, 12));
+	home = new JButton ("Return Home");
+        home.addActionListener(this);
+       
+        add(home);
+        
+    }
+     @Override
+    public void actionPerformed(ActionEvent event) 
+    {
+        Object obj = event.getSource();
+        {
+         if (obj == home)
+           removeAll();
+           PrimaryPanel pp = new PrimaryPanel();
+           add(pp);
+           repaint();
+           revalidate();
+        }
+    }
+} 
+    import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+
+public class StartPanel extends JPanel implements ActionListener {
+    
+    JButton home;
+    JLabel begin;
+    Timer tim;
+    int limit = 0;
+    int delay = 0;
+    int i = 0;
+    int counter=0;
+    JButton start, timer, clickMe, score;
+   
+    public StartPanel ()
+    {
+        super();
+        setBackground(Color. cyan);
+        start = new JButton("START");
+        timer = new JButton("Time in play");
+        score = new JButton ("SCORE: ");
+        home= new JButton ("Return Home");
+        add(start);
+        add(timer);
+        add(score);
+        add(home);
+        delay = 1000; 
+        tim = new Timer(delay, this);
+        
+        start.addActionListener(this); 
+        
+        home.addActionListener(new ActionListener () {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                Object ret = ae.getSource();
+        {
+         if (ret == home)
+        removeAll();
+          PrimaryPanel pp = new PrimaryPanel();
+          add(pp);
+          revalidate();
+          
+            }
+        
+        }
+        
+}
+    public void actionPerformed(ActionEvent ae) {
+          Object obj = ae.getSource();
+        String choice = ae.getActionCommand();
+        if (obj == start)
+        {
+            tim.start();
+        }
+        if (obj == tim)
+        {
+            i = i+1;
+            timer.setText("Time in play: "+i);
+        }
+  
+        
+        }
+    
+}
+
+}
