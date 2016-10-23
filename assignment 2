@@ -211,11 +211,7 @@ public class PrimaryPanel extends JPanel implements ActionListener, ChangeListen
         if (obj == easy){
             dif = easy.getValue();
         }
-        if (obj == med){
-	    dif = med.getValue();
-	}
-	if (obj == h){
-	    dif = h.getValue();
+       
     }
     }
 
