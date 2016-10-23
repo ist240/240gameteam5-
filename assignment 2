@@ -384,4 +384,7 @@ public class player {
     public player(String inputName){
      name = inputName;   
     }
+     public String getName(){
+        return name;
+    }
 }
