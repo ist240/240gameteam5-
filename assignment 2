@@ -170,6 +170,7 @@ public class PrimaryPanel extends JPanel implements ActionListener{
             repaint();
         }
         }
+    }
    import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -217,7 +218,7 @@ import javax.swing.*;
     }
 }
     }
-      import java.awt.*;
+       import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -275,6 +276,7 @@ public class StartPanel extends JPanel implements ActionListener {
     {
         super();
         setBackground(Color. cyan);
+        
         start = new JButton("START");
         timer = new JButton("Time in play");
         score = new JButton ("SCORE: ");
