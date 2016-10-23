@@ -318,7 +318,7 @@ public class StartPanel extends JPanel implements ActionListener {
     int delay = 0;
     int i = 0;
     int counter=0;
-    JButton start, timer, clickMe, score;
+    JButton start, timer, clickMe, score, player;
    
     public StartPanel(player iplayer, int idif, char igender)
     {
@@ -329,59 +329,54 @@ public class StartPanel extends JPanel implements ActionListener {
 	setLayout(null);
         setPreferredSize(new Dimension (600,400));
         setBackground(Color. cyan);
-    
-        
+
         start = new JButton("START");
         timer = new JButton("Time in play");
         score = new JButton ("SCORE: ");
         home= new JButton ("Return Home");
-       	add(start);
+        player= new JButton ();
         start.setBounds(new Rectangle (490,10,100,20));
-        add(timer);
+        add(start);
         timer.setBounds(new Rectangle (10,350,125,20));
-        add(score);
+        add(timer);
         score.setBounds(new Rectangle (10,10,100,20));
-        add(home);
+        add(score);
         home.setBounds(new Rectangle (460,350,125,20));
+        add(home);
+        add(player);
+        player.setText(currentplayer.getName());
+        player.setBounds(new Rectangle (250,10,100,20));
         delay = 1000; 
         tim = new Timer(delay, this);
-        
         start.addActionListener(this); 
-        
-        home.addActionListener(new ActionListener () {
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                Object ret = ae.getSource();
-        {
-         if (ret == home)
-        removeAll();
-          PrimaryPanel pp = new PrimaryPanel();
-          add(pp);
-          revalidate();
-          
-            }
-        
-        }
-        
-}
-    public void actionPerformed(ActionEvent ae) {
-          Object obj = ae.getSource();
-        String choice = ae.getActionCommand();
-        if (obj == start)
-        {
-            tim.start();
-        }
-        if (obj == tim)
-        {
-            i = i+1;
-            timer.setText("Time in play: "+i);
-        }
-  
-        
-        }
-    
-}
-
+        home.addActionListener(this);
+   }
+   
+       @Override
+   public void actionPerformed(ActionEvent ae) {
+         Object obj = ae.getSource();
+       String choice = ae.getActionCommand();
+       if (obj == start)
+       {
+           tim.start();
+       }
+       if (obj == tim)
+       {
+           i = i+1;
+           timer.setText("Time in play: "+i);
+       }
+ if (obj == home){
+       tim.stop();
+       setLayout(new FlowLayout());
+       PrimaryPanel pp = new PrimaryPanel();
+       removeAll();
+       add(pp);
+       repaint();
+       revalidate();
+           }
+       
+       }
+   
 }
 public class player {
     String name = "";
