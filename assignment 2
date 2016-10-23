@@ -376,3 +376,12 @@ public class StartPanel extends JPanel implements ActionListener {
 }
 
 }
+public class player {
+    String name = "";
+    int best = 0;
+    int last = 0;
+    
+    public player(String inputName){
+     name = inputName;   
+    }
+}
