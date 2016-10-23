@@ -326,16 +326,23 @@ public class StartPanel extends JPanel implements ActionListener {
 	gender = igender;
         dif = idif;
         currentplayer = iplayer;
+	setLayout(null);
+        setPreferredSize(new Dimension (600,400));
         setBackground(Color. cyan);
+    
         
         start = new JButton("START");
         timer = new JButton("Time in play");
         score = new JButton ("SCORE: ");
         home= new JButton ("Return Home");
-        add(start);
+       	add(start);
+        start.setBounds(new Rectangle (490,10,100,20));
         add(timer);
+        timer.setBounds(new Rectangle (10,350,125,20));
         add(score);
+        score.setBounds(new Rectangle (10,10,100,20));
         add(home);
+        home.setBounds(new Rectangle (460,350,125,20));
         delay = 1000; 
         tim = new Timer(delay, this);
         
