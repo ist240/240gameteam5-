@@ -388,3 +388,29 @@ public class player {
         return name;
     }
 }
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.BorderFactory.*;
+import javax.swing.border.*;
+
+
+
+public class GenderPanel extends JPanel{
+    JRadioButton male;
+    JRadioButton female;
+    
+    public GenderPanel(){
+        
+    setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+   
+    male = new JRadioButton("Male");
+    female = new JRadioButton("Female");
+    ButtonGroup gendgroup = new ButtonGroup();
+    gendgroup.add(male);
+    gendgroup.add(female);
+    add(male);
+    add(female);
+    }
+    
+}
+
