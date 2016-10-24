@@ -375,13 +375,13 @@ public class StartPanel extends JPanel implements ActionListener {
        revalidate();
            }
  if (obj == e){ 
- tim.setDelay(200)
+ tim.setDelay(200);
        }
  if (obj == med){ 
- tim.setDelay(350)
+ tim.setDelay(350);
  }
  if (obj == h){
- tim.setDelay(500)
+ tim.setDelay(500);
  }
    
 }
