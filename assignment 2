@@ -320,7 +320,7 @@ public class StartPanel extends JPanel implements ActionListener {
     int counter=0;
     JButton start, timer, clickMe, score, player;
    
-    public StartPanel(player iplayer, int idif, char igender)
+      public StartPanel(player iplayer, int idif, char igender)
     {
         super();
 	gender = igender;
@@ -328,7 +328,11 @@ public class StartPanel extends JPanel implements ActionListener {
         currentplayer = iplayer;
 	setLayout(null);
         setPreferredSize(new Dimension (600,400));
-        setBackground(Color. cyan);
+        if (gender == 'm'){
+        setBackground(Color.cyan);
+        }else{
+            setBackground(Color.pink);
+        }
 
         start = new JButton("START");
         timer = new JButton("Time in play");
@@ -348,6 +352,15 @@ public class StartPanel extends JPanel implements ActionListener {
         player.setBounds(new Rectangle (250,10,100,20));
         delay = 1000; 
         tim = new Timer(delay, this);
+        if (dif == 1){ 
+ tim.setDelay(1000);
+       }
+ if (dif == 2){ 
+ tim.setDelay(750);
+ }
+ if (dif == 3){
+ tim.setDelay(500);
+ }
         start.addActionListener(this); 
         home.addActionListener(this);
    }
@@ -374,16 +387,7 @@ public class StartPanel extends JPanel implements ActionListener {
        repaint();
        revalidate();
            }
- if (obj == e){ 
- tim.setDelay(200);
-       }
- if (obj == med){ 
- tim.setDelay(350);
- }
- if (obj == h){
- tim.setDelay(500);
- }
-   
+  
 }
 public class player {
     String name = "";
